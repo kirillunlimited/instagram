@@ -1,0 +1,196 @@
+/* BASE */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: #333;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+svg {
+  overflow:visible;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1024px;
+  min-width: 768px;
+  margin: 0 auto;
+  padding: 58px;
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 58px 0;
+  }
+}
+
+/* CARD */
+.card {
+  margin-bottom: 30px;
+  padding: 0 20px;
+  width: 100%;
+}
+.card:last-child {
+  margin-bottom: 0;
+}
+.card__content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  box-shadow: 0 0 4px #777;
+}
+
+.card__photo {
+  width: 50%;
+}
+.card__info {
+  width: 50%;
+}
+
+@media (min-width: 1024px) {
+  .card {
+    width: 32%;
+  }
+  .card--absolute {
+    position: absolute;
+  }
+  .card__content {
+    flex-direction: column;
+  }
+  .card__photo {
+    width: 100%;
+    margin-top: 80px;
+  }
+  .card__info {
+    width: 100%;
+  }
+}
+
+/* PHOTO */
+/*
+  можно было сделать через background-image, чтобы учесть те случаи,
+  когда текст по высоте больше, чем изображение - тогда можно было бы
+  сделать background-size: cover, но, на мой взгляд, лучше оставить полосы
+  сверху и снизу, чтобы сохранить качество снимка
+ */
+.photo {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+}
+.photo__image {
+  width: 100%;
+}
+
+/* INFO */
+.info {
+  padding: 20px;
+}
+.info__header {
+  border-bottom: 1px solid #f2f2f2;
+}
+.info__likes {
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+@media (min-width: 1024px) {
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+  .info__header {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+    border-bottom: 0;
+    background-color: #fff;
+  }
+  .info__likes {
+    padding-top: 0;
+  }
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.header__author {
+}
+.header__time {
+  color: #959595;
+}
+
+/* AUTHOR */
+.author {
+}
+.author__portrait {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.author__info {
+  display: inline-block;
+  vertical-align: middle;
+  width: 160px;
+}
+.author__name {
+  font-weight: bold;
+}
+.author__location {
+  line-height: 1.2;
+}
+
+/* LIKES */
+.likes {
+}
+.likes__heart {
+  display: inline-block;
+  vertical-align: middle;
+  width: 18px;
+  padding: 2px;
+  cursor: pointer;
+  fill: transparent;
+  stroke: #000;
+  transition: .2s ease fill, .2s ease stroke;
+  stroke-width: 4px;
+}
+.likes__heart:hover {
+  fill: #ff0000;
+  stroke: #ff0000;
+}
+.likes__count {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* DESCRIPTION */
+.description {
+  font-size: 12px;
+  line-height: 1.2;
+}
+
